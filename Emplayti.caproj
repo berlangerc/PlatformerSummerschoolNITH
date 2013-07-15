@@ -7,9 +7,10 @@
     <unique-id>1v106n65jfq5x</unique-id>
     <saved-with-version>11400</saved-with-version>
     <used-plugins>
-        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
-        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
         <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
     </used-plugins>
     <used-behaviors />
     <used-effects />
@@ -46,6 +47,9 @@
         </object-type>
         <object-type name="Button">
             <plugin id="Button" />
+        </object-type>
+        <object-type name="TextBox">
+            <plugin id="TextBox" />
         </object-type>
     </object-folder>
     <families />
