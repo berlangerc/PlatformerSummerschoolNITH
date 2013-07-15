@@ -7,9 +7,9 @@
     <unique-id>1v106n65jfq5x</unique-id>
     <saved-with-version>11400</saved-with-version>
     <used-plugins>
-        <plugin author="Scirra" id="Button" version="1">Button</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="Button" version="1">Button</plugin>
     </used-plugins>
     <used-behaviors />
     <used-effects />
@@ -50,14 +50,16 @@
     </object-folder>
     <families />
     <layout-folder expanded="1">
-        <layout>Layout 1.xml</layout>
-        <layout>Layout 2.xml</layout>
-        <layout>Layout 3.xml</layout>
+        <layout>l_splash.xml</layout>
+        <layout>l_Start.xml</layout>
+        <layout>l_level.xml</layout>
+        <layout>l_gameover.xml</layout>
     </layout-folder>
     <event-folder expanded="1">
-        <event-sheet>Event sheet 1.xml</event-sheet>
-        <event-sheet>Event sheet 2.xml</event-sheet>
-        <event-sheet>Event sheet 3.xml</event-sheet>
+        <event-sheet>es_splash.xml</event-sheet>
+        <event-sheet>es_start.xml</event-sheet>
+        <event-sheet>es_level.xml</event-sheet>
+        <event-sheet>es_gameover.xml</event-sheet>
     </event-folder>
     <global-instances />
     <sounds-folder expanded="1" />

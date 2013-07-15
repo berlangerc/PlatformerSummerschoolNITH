@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2layout>
-    <name>Layout 1</name>
-    <event-sheet>Event sheet 1</event-sheet>
+    <name>l_splash</name>
+    <event-sheet>es_splash</event-sheet>
     <size>
         <width>1280</width>
         <height>1024</height>
