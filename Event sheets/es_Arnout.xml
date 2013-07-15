@@ -2,5 +2,267 @@
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>es_Arnout</name>
-    <events />
+    <events>
+        <event-group description="bird moves toward you when it is within screen and when it reaches your X position, it flies upward out of the screen" title="Bird Enemy">
+            <sub-events>
+                <event-block>
+                    <conditions>
+                        <condition id="0" name="On collision with another object" type="spr_ArTestPlayer">
+                            <param id="0" name="Object">spr_ArTestBird</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Flash" id="0" name="Flash" type="spr_ArTestPlayer">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="-3" name="Is on-screen" type="spr_ArTestBird" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block>
+                            <conditions>
+                                <condition id="-1" name="Compare X" type="spr_ArTestBird">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="X co-ordinate">spr_ArTestPlayer.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-23" name="Move at angle" type="spr_ArTestBird">
+                                    <param id="0" name="Angle">180</param>
+                                    <param id="1" name="Distance">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="-22" name="Else" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-23" name="Move at angle" type="spr_ArTestBird">
+                                    <param id="0" name="Angle">210</param>
+                                    <param id="1" name="Distance">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Car moves within its (invisible) path markers" title="Car Enemy">
+            <sub-events>
+                <event-block>
+                    <conditions>
+                        <condition id="0" name="On collision with another object" type="spr_ArTestPlayer">
+                            <param id="0" name="Object">spr_ArTestCar</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Flash" id="0" name="Flash" type="spr_ArTestPlayer">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" type="spr_ArTestCar">
+                            <param id="0" name="Instance variable">Action</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;right&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" type="spr_ArTestCar">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" type="spr_ArTestCar">
+                            <param id="0" name="Instance variable">Action</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;left&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" type="spr_ArTestCar">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="0" name="On collision with another object" type="spr_ArTestCar">
+                            <param id="0" name="Object">spr_ArTestCarPathMarker</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block>
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" type="spr_ArTestCar">
+                                    <param id="0" name="Instance variable">Action</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;right&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" type="spr_ArTestCar">
+                                    <param id="0" name="Instance variable">Action</param>
+                                    <param id="1" name="Value">&quot;left&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="-22" name="Else" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" type="spr_ArTestCar">
+                                    <param id="0" name="Instance variable">Action</param>
+                                    <param id="1" name="Value">&quot;right&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Badminton shuttlecock moves in an arc between two points" title="Badminton enemy">
+            <sub-events>
+                <event-block>
+                    <conditions>
+                        <condition id="0" name="On collision with another object" type="spr_ArTestPlayer">
+                            <param id="0" name="Object">spr_ArTestBadminton</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Flash" id="0" name="Flash" type="spr_ArTestPlayer">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="-2" name="On start of layout" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" type="spr_ArTestBadmintonPathMarker1">
+                            <param id="0" name="Object">spr_ArTestBadminton</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-8" name="Set angle" type="spr_ArTestBadminton">
+                            <param id="0" name="Angle">300</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="0" name="On collision with another object" type="spr_ArTestBadminton">
+                            <param id="0" name="Object">spr_ArTestBadmintonPathMarker2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" type="spr_ArTestBadminton" />
+                        <action id="0" name="Spawn another object" type="spr_ArTestBadmintonPathMarker2">
+                            <param id="0" name="Object">spr_ArTestBadminton</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-8" name="Set angle" type="spr_ArTestBadminton">
+                            <param id="0" name="Angle">240</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="0" name="On collision with another object" type="spr_ArTestBadminton">
+                            <param id="0" name="Object">spr_ArTestBadmintonPathMarker1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" type="spr_ArTestBadminton" />
+                        <action id="0" name="Spawn another object" type="spr_ArTestBadmintonPathMarker1">
+                            <param id="0" name="Object">spr_ArTestBadminton</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-8" name="Set angle" type="spr_ArTestBadminton">
+                            <param id="0" name="Angle">300</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Player picks up medicine to temporarily improve his sight" title="Medication Pickup">
+            <sub-events>
+                <event-block>
+                    <conditions>
+                        <condition id="0" name="On collision with another object" type="spr_ArTestPlayer">
+                            <param id="0" name="Object">spr_ArTestMedication</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" type="spr_ArTestFilter">
+                            <param id="0" name="Instance variable">int_opacity</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">25</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" type="spr_ArTestFilter">
+                            <param id="0" name="Instance variable">int_opacity</param>
+                            <param id="1" name="Value">25</param>
+                        </action>
+                        <action id="-16" name="Set opacity" type="spr_ArTestFilter">
+                            <param id="0" name="Opacity">spr_ArTestFilter.int_opacity</param>
+                        </action>
+                        <action id="-9" name="Destroy" type="spr_ArTestMedication" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="the glaucoma filter gradually increases it&apos;s opacity" title="Filter" />
+        <event-block>
+            <conditions>
+                <condition id="-1" name="Every tick" type="System" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" type="spr_ArTestFilter">
+                    <param id="0" name="Object">spr_ArTestPlayer</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-6" name="Every X seconds" type="System">
+                    <param id="0" name="Interval (seconds)">0.5</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" type="spr_ArTestFilter">
+                    <param id="0" name="Instance variable">int_opacity</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">100</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Add to" type="spr_ArTestFilter">
+                    <param id="0" name="Instance variable">int_opacity</param>
+                    <param id="1" name="Value">7</param>
+                </action>
+                <action id="-16" name="Set opacity" type="spr_ArTestFilter">
+                    <param id="0" name="Opacity">spr_ArTestFilter.int_opacity</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
 </c2eventsheet>
