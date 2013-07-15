@@ -13,7 +13,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <layout>l_splash</layout>
         <layout>l_Start</layout>
         <layout>l_level</layout>
-        <layout active="1">l_gameover</layout>
+        <layout>l_gameover</layout>
+        <layout active="1">l_Alain</layout>
         <event-sheet>es_splash</event-sheet>
     </open-tabs>
     <properties>
